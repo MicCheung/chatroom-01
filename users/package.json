@@ -1,0 +1,26 @@
+{
+  "name": "user-auth-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env DEBUG=users:* PORT=5858 SEQUELIZE_CONNECT=sequelize-sqlite.yaml node ./user-server.mjs",
+    "on-server": "DEBUG=users:* REST_LISTEN=0.0.0.0 PORT=5858 SEQUELIZE_CONNECT=sequelize-mysql.yaml node ./user-server.mjs",
+    "docker-build": "docker build -t svc-userauth ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "commander": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "debug": "4.1.x",
+    "fs-extra": "^9.1.0",
+    "js-yaml": "3.14.x",
+    "mysql2": "^3.6.2",
+    "restify": "^10.0.0",
+    "restify-clients": "2.6.x",
+    "sequelize": "^6.33.0",
+    "sqlite3": "^5.1.6"
+  }
+}
